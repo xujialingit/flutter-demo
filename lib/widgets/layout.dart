@@ -234,5 +234,105 @@ class PaddingAndMarginLayoutDemo extends StatelessWidget{
   }
 }
 
+//Flutter 尺寸限制容器 ConstrainedBox widget:
+//
 
+class ConstrainedBoxDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+          maxHeight: 100,
+          maxWidth: 100,
+          minHeight: 50,
+          minWidth: 50
+        ),
+      child:  Container(
+        width: 20,
+        height: 20,
+        color: Colors.red,
+      ),
+    );
+  }
+}
+
+
+//SizeBox 如果父容器指定了宽高，那么子组件不可以修改宽高
+class SizedBoxDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return SizedBox(
+      width: 100,
+      height: 100,
+      child: Container(
+        color: Colors.red,
+        width: 200,
+        height: 200,
+      ),
+    );
+  }
+}
+
+//Flutter装饰器  -->DecoratedBox
+class BoxDecorationDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(20),
+      width: double.infinity,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(//渐变色
+            colors: [Colors.red, Colors.green]
+          ),
+          borderRadius: BorderRadius.circular(10.0), //原角度
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black,
+              offset: Offset(2.0,2.0),
+              blurRadius: 2,
+            )
+          ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 100,
+            right: 100,
+            top: 20,
+            bottom: 20
+          ),
+          child: Text(
+            "渐变色~",
+            style: TextStyle(
+              color:Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+//Flutter小容器 Container--> widget
+class ContainerDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(100),
+      width: 100,
+      height: 100,
+      child: Text("data"),
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(width: 1, color: Colors.black),
+        ),
+        color: Colors.red,
+      ),
+      transform: Matrix4.rotationZ(0.5), //选择
+    );
+  }
+}
 
