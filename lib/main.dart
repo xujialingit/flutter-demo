@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:english_words/english_words.dart";
+import 'package:untitled/widgets/appbar.dart';
 import 'package:untitled/widgets/inputDemo.dart';
 import 'package:untitled/widgets/layout.dart';
 import 'package:untitled/widgets/product.dart';
@@ -7,9 +8,8 @@ import 'package:untitled/widgets/router.dart';
 // void main()=> runApp(const MyApp());
 void main()=> runApp(
   MaterialApp(
-    home: Scaffold(
-      body: ContainerDemo(),
-    ) ,
+    home: AppBarTabBarDemo(),
+    debugShowCheckedModeBanner: false,
   )
 );
 
