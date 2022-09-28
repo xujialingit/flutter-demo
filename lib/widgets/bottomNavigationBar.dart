@@ -20,12 +20,21 @@ class _ButtonNavigatorBarDemoState extends State<ButtomNavigatorBarDemo> {
       appBar: AppBar(
         title: Text("底部选项卡"),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //将按钮作为居中嵌入下方tabbar
+      floatingActionButton: FloatingActionButton( //设置居中按钮
+        onPressed: (){
+          print("object");
+        },
+        child: Text("发布"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.add), label: "新增"),
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "我的"),
-            BottomNavigationBarItem(icon: Icon(Icons.remove), label: "减少"),
-          ],
+        type: BottomNavigationBarType.fixed, //设置超出三个页面显示
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: "新增"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "我的"),
+          BottomNavigationBarItem(icon: Icon(Icons.remove), label: "减少"),
+          BottomNavigationBarItem(icon: Icon(Icons.remove), label: "登录"),
+        ],
         currentIndex: _index,
         onTap: (v) {
             setState(() {
