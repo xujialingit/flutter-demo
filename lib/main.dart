@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import "package:english_words/english_words.dart";
 import 'package:provider/provider.dart';
 import 'package:untitled/provider/counter_provider.dart';
-import 'package:untitled/widgets/list_title.dart';
+import 'package:untitled/widgets/dio_demo.dart';
 import 'package:untitled/widgets/bottomNavigationBar.dart';
 import 'package:untitled/widgets/layout.dart';
 import 'package:untitled/widgets/ProviderDemo.dart';
@@ -14,7 +14,7 @@ void main()=> runApp(
       ChangeNotifierProvider(create: (context)=>CounterProvider()),
     ],
     child:  MaterialApp(
-      home: ProviderDemo(),
+      home: DioDemo(),
       routes: {
         "ProviderDemo2": (context)=>ProviderDemo2()
       },
