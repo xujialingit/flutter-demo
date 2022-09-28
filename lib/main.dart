@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import "package:english_words/english_words.dart";
-import 'package:untitled/widgets/list_view.dart';
+import 'package:untitled/widgets/list_title.dart';
 import 'package:untitled/widgets/bottomNavigationBar.dart';
 import 'package:untitled/widgets/layout.dart';
-import 'package:untitled/widgets/table.dart';
+import 'package:untitled/widgets/card.dart';
 import 'package:untitled/widgets/router.dart';
 // void main()=> runApp(const MyApp());
 void main()=> runApp(
   MaterialApp(
-    home: TableDemo(),
+    home: ListTileDemo(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
       appBarTheme: AppBarTheme(
