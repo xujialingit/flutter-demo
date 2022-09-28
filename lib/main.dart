@@ -1,32 +1,43 @@
 import 'package:flutter/material.dart';
 import "package:english_words/english_words.dart";
+import 'package:provider/provider.dart';
+import 'package:untitled/provider/counter_provider.dart';
 import 'package:untitled/widgets/list_title.dart';
 import 'package:untitled/widgets/bottomNavigationBar.dart';
 import 'package:untitled/widgets/layout.dart';
-import 'package:untitled/widgets/card.dart';
+import 'package:untitled/widgets/ProviderDemo.dart';
 import 'package:untitled/widgets/router.dart';
 // void main()=> runApp(const MyApp());
 void main()=> runApp(
-  MaterialApp(
-    home: ListTileDemo(),
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      appBarTheme: AppBarTheme(
-        titleTextStyle: TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.w700,
-        )
+  MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context)=>CounterProvider()),
+    ],
+    child:  MaterialApp(
+      home: ProviderDemo(),
+      routes: {
+        "ProviderDemo2": (context)=>ProviderDemo2()
+      },
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          appBarTheme: AppBarTheme(
+              titleTextStyle: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+              )
+          ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: Colors.yellow,
+          ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: Colors.yellow,
+            unselectedItemColor: Colors.black,
+            selectedItemColor: Colors.white,
+          )
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: Colors.yellow,
-      ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: Colors.yellow,
-        unselectedItemColor: Colors.black,
-        selectedItemColor: Colors.white,
-      )
     ),
   )
+
 );
 
 
