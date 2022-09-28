@@ -3,14 +3,20 @@ import "package:english_words/english_words.dart";
 import 'package:untitled/widgets/list_view.dart';
 import 'package:untitled/widgets/bottomNavigationBar.dart';
 import 'package:untitled/widgets/layout.dart';
-import 'package:untitled/widgets/simple_dialog.dart';
+import 'package:untitled/widgets/table.dart';
 import 'package:untitled/widgets/router.dart';
 // void main()=> runApp(const MyApp());
 void main()=> runApp(
   MaterialApp(
-    home: SimpleDialogDemo(),
+    home: TableDemo(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
+      appBarTheme: AppBarTheme(
+        titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w700,
+        )
+      ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: Colors.yellow,
       ),
